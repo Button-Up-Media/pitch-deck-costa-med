@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer bow-tie / butterfly shape -->
+  <path d="M60 36 L20 22 Q12 28 14 50 Q16 72 28 86 Q44 96 60 88" />
+  <path d="M60 36 L100 22 Q108 28 106 50 Q104 72 92 86 Q76 96 60 88" />
+  <!-- Fork (left of center) -->
+  <path d="M52 38 L52 60" />
+  <path d="M48 38 L48 50 Q48 54 52 54 Q56 54 56 50 L56 38" />
+  <path d="M52 60 L52 80 L50 84 L54 84 L52 80" />
+  <!-- Knife (right of center) -->
+  <path d="M68 38 Q72 38 72 44 L72 62 L68 62 L68 38 Z" />
+  <path d="M68 62 L68 84" />
+</svg>
