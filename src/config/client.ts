@@ -81,7 +81,7 @@ export const config: Config = {
     name: "Costa Med",
     shortName: "Costa Med",
     industry: "Hospitality",
-    preparedFor: "Costa Med Leadership Team",
+    preparedFor: "Antonio and Harold",
     decisionDate: "Q2 2026",
     path: "wordOfMouth",
     primaryGoal: "acquisition",
