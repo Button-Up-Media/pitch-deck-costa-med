@@ -248,6 +248,23 @@ function CallTextCtas() {
 
   return (
     <div className="mt-7">
+      {/* Direct contact — adds a face to the phone number */}
+      <div className="mb-4 flex items-center gap-3 rounded-xl border border-line-soft bg-bg-2/60 p-3">
+        <img
+          src="/images/giovanni.jpg"
+          alt="Giovanni"
+          className="size-12 flex-shrink-0 rounded-full object-cover ring-2 ring-gold-500/30"
+        />
+        <div className="min-w-0">
+          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-400">
+            Your direct contact
+          </div>
+          <div className="font-display text-sm font-bold text-cream-50">
+            Giovanni
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-3 sm:flex-row">
         {isBlank ? (
           <button type="button" disabled className={`${primaryCls} cursor-default opacity-80`}>

@@ -49,7 +49,6 @@ export type Config = {
     shortName: string;
     industry: string;
     preparedFor: string;
-    decisionDate: string;
     path: ClientPath;
     primaryGoal: GrowthGoal;
     /** Short location string shown on the cover (e.g. "Key Biscayne, FL") */
@@ -82,7 +81,6 @@ export const config: Config = {
     shortName: "Costa Med",
     industry: "Hospitality",
     preparedFor: "Antonio and Harold",
-    decisionDate: "Q2 2026",
     path: "wordOfMouth",
     primaryGoal: "acquisition",
     location: "Key Biscayne, FL",
