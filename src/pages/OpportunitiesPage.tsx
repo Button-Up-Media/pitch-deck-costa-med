@@ -116,62 +116,39 @@ export function OpportunitiesPage() {
 
       <SectionScrollHint />
 
-      {/* Two client paths */}
+      {/* Client path — only the one applicable to this client */}
       <div className="mt-14">
         <div className="eyebrow mb-5">Where you're starting from</div>
-        <div className="grid gap-5 md:grid-cols-2 md:items-stretch md:gap-6">
-          {(["wordOfMouth", "burnedByPriorAgency"] as const).map((key) => {
-            const info = PATHS[key];
-            const isActive = path === key;
-            return (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6 }}
-                className="h-full"
+        {(() => {
+          const info = PATHS[path];
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <Panel
+                motion={false}
+                className="border-gold-500/40 bg-gold-soft"
               >
-                <Panel
-                  motion={false}
-                  className={
-                    isActive
-                      ? "h-full border-gold-500/40 bg-gold-soft"
-                      : "h-full opacity-70"
-                  }
-                >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`flex size-11 flex-shrink-0 items-center justify-center rounded-xl ${
-                        isActive
-                          ? "bg-gold-500/15 text-gold-400 ring-1 ring-gold-500/30"
-                          : "bg-cream-300/5 text-cream-300"
-                      }`}
-                    >
-                      <info.icon className="size-5" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <div className="eyebrow">{info.badge}</div>
-                        {isActive && (
-                          <span className="rounded-full bg-gold-500/15 px-2 py-0.5 font-display text-[10px] font-bold tracking-wider text-gold-400">
-                            ★ THIS IS YOU
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="mt-2 font-display text-lg font-bold text-cream-50 md:text-xl">
-                        {info.title}
-                      </h3>
-                      <p className="mt-2 text-[15px] leading-relaxed text-cream-200">
-                        {info.body}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex size-11 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400 ring-1 ring-gold-500/30">
+                    <info.icon className="size-5" />
                   </div>
-                </Panel>
-              </motion.div>
-            );
-          })}
-        </div>
+                  <div className="flex-1">
+                    <h3 className="font-display text-lg font-bold text-cream-50 md:text-xl">
+                      {info.title}
+                    </h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-cream-200">
+                      {info.body}
+                    </p>
+                  </div>
+                </div>
+              </Panel>
+            </motion.div>
+          );
+        })()}
       </div>
 
       {/* Primary goal */}
