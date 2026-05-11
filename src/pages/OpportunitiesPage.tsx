@@ -161,61 +161,32 @@ export function OpportunitiesPage() {
       >
         <div className="eyebrow mb-5">What you actually want</div>
         <Panel motion={false}>
-          <div className="grid gap-5 md:grid-cols-3">
-            {(["acquisition", "brandValidity", "retention"] as const).map(
-              (key) => {
-                const info = GOALS[key];
-                const isPrimary = config.client.primaryGoal === key;
-                return (
-                  <div
-                    key={key}
-                    className={`rounded-2xl p-5 ${
-                      isPrimary
-                        ? "border border-gold-500/40 bg-gold-soft"
-                        : "border border-line-soft"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`flex size-9 items-center justify-center rounded-xl ${
-                          isPrimary
-                            ? "bg-gold-500/15 text-gold-400"
-                            : "bg-cream-300/5 text-cream-300"
-                        }`}
-                      >
-                        <info.icon className="size-4" />
-                      </div>
-                      <div className="font-display text-sm font-bold text-cream-50">
-                        {info.label}
-                      </div>
-                    </div>
-                    <p className="mt-3 text-[14px] leading-relaxed text-cream-200">
-                      {info.body}
-                    </p>
-                    {isPrimary && (
-                      <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-gold-400">
-                        Primary goal for this engagement
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-            )}
+          <div className="flex items-start gap-4">
+            <div className="flex size-11 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400 ring-1 ring-gold-500/30">
+              <goal.icon className="size-5" />
+            </div>
+            <div className="flex-1">
+              <div className="font-display text-xl font-bold text-cream-50 md:text-2xl">
+                {goal.label}
+              </div>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-cream-200">
+                {goal.body}
+              </p>
+            </div>
           </div>
           <HrSoft className="my-6" />
           <p className="text-[15px] leading-relaxed text-cream-200">
+            In our first conversation, you were clear:{" "}
             <span className="font-semibold text-cream-50">
-              Naming the goal is the most important thing on this slide.
+              getting more customers through the door is the number one priority.
             </span>{" "}
-            For{" "}
             <span className="font-display font-bold text-gold-400">
               {config.client.shortName}
-            </span>
-            , the program below is built around{" "}
-            <span className="font-semibold text-cream-50">
-              {goal.label.toLowerCase()}
-            </span>
-            . Channels, creative, and budget all flow from that.
+            </span>{" "}
+            already has a loyal base — the goal isn't to disrupt what's working,
+            it's to add a consistent flow of new guests on top of it. Every
+            campaign, every post, and every ad in this program is pointed at
+            that outcome, without alienating the regulars who've kept you going.
           </p>
         </Panel>
       </motion.div>
