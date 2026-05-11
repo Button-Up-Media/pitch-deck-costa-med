@@ -281,13 +281,12 @@ function GoogleAdsInvestment() {
             </div>
             <div className="mt-3 flex items-baseline gap-1.5">
               <span className="stat-num bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-3xl text-transparent md:text-4xl lg:text-5xl">
-                $1,000 – $3,000
+                $600
               </span>
               <span className="text-sm text-cream-300">/mo</span>
             </div>
             <p className="mt-4 flex-1 text-[14px] leading-relaxed text-cream-200">
-              This goes directly to Google — not to us. We recommend starting here for
-              a single location. You control the budget and can adjust at any time.
+              This goes directly to Google — not to us. You control the budget and can adjust at any time.
             </p>
             <div className="mt-5 border-t border-gold-500/20 pt-4 text-[12px] italic text-gold-400/85">
               This is your money working in the market.
