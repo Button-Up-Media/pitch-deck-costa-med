@@ -77,7 +77,7 @@ export const SERVICES: Record<ServiceKey, ServiceMeta> = {
       "6-month contract",
       "Correlation analysis included after 6 months — we collect your data as we go and deliver the full statistical report at the end of month 6, included at no extra charge",
     ],
-    imageUrl: "/images/bts-shoot.jpeg",
+    imageUrl: "/images/costa-med/owner.jpg",
     processVideo: {
       title: "What happens when you hire us",
       description:

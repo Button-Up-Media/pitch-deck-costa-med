@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Clock, Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { Panel, HrSoft } from "../components/Panel";
 import { config } from "../config/client";
@@ -34,25 +34,6 @@ function BlankPrice() {
   );
 }
 
-/** Hours estimate badge — shows above the price on each service row */
-function HoursBadge({ hours }: { hours: number | null | undefined }) {
-  return (
-    <div className="inline-flex items-center gap-1.5 rounded-full border border-line bg-bg-2 px-2.5 py-1 text-[11px] font-medium text-cream-200">
-      <Clock className="size-3 text-gold-400" strokeWidth={2.4} />
-      <span className="font-display uppercase tracking-wider text-[10px] text-cream-300">
-        Est.
-      </span>
-      {hours == null ? (
-        <span className="inline-block rounded border border-dashed border-gold-400/60 bg-gold-500/10 px-1 font-mono text-[10px] font-bold leading-none text-gold-300">
-          ___
-        </span>
-      ) : (
-        <span className="font-mono font-bold text-cream-50">{hours}</span>
-      )}
-      <span className="text-cream-300">hrs / mo</span>
-    </div>
-  );
-}
 
 export function ValuePage() {
   const enabled = SERVICE_ORDER.filter((k) => config.services[k].enabled);
@@ -124,7 +105,6 @@ export function ValuePage() {
                   </div>
 
                   <div className="flex flex-col items-start gap-2 sm:items-end sm:text-right">
-                    <HoursBadge hours={cfg.hoursPerMonth} />
                     {price === null ? (
                       <div className="flex flex-col items-start gap-1 sm:items-end">
                         <BlankPrice />

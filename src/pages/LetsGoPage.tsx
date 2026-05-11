@@ -65,18 +65,6 @@ export function LetsGoPage() {
         subtitle={`The all-in-one program for ${config.client.name}: every piece in this deck wrapped into one program — one team, one plan, one invoice.`}
       />
 
-      {/* Savings callout — leads the section so the value lands before the timeline */}
-      <SavingsCallout />
-
-      {/* Two-phase timeline */}
-      <BundleTimeline />
-
-      {/* Included-free callout bar */}
-      <IncludedFreeBar />
-
-      {/* Total investment summary */}
-      <TotalInvestmentSummary />
-
       {/* Pillars + CTA block — the bundled program at a glance */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -122,17 +110,25 @@ export function LetsGoPage() {
                     </div>
                   </div>
                 ))}
-                {/* Social Ads add-on note */}
-                <div className="flex items-center gap-4 rounded-xl border border-dashed border-line/60 bg-bg-1 p-4 opacity-70">
-                  <div className="flex size-10 flex-shrink-0 items-center justify-center rounded-xl border border-dashed border-cream-300/20 bg-bg-2">
-                    <span className="text-xs text-cream-300/60">+</span>
+                {/* Included free */}
+                <div className="mt-1 rounded-xl border border-gold-500/25 bg-gold-500/5 p-4">
+                  <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-gold-400">
+                    Included free in your bundle
                   </div>
-                  <div>
-                    <div className="font-display text-sm font-bold text-cream-300">
-                      Social Ads
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <Check className="mt-0.5 size-3.5 flex-shrink-0 text-gold-400" strokeWidth={3} />
+                      <span className="text-[12px] text-cream-200">
+                        <span className="font-medium text-cream-100">Web Management</span>
+                        {" "}— $200/mo value — active months 2–6
+                      </span>
                     </div>
-                    <div className="text-xs text-cream-300/60">
-                      Meta + TikTok — available as a separate add-on
+                    <div className="flex items-start gap-2">
+                      <Check className="mt-0.5 size-3.5 flex-shrink-0 text-gold-400" strokeWidth={3} />
+                      <span className="text-[12px] text-cream-200">
+                        <span className="font-medium text-cream-100">Correlation Analysis</span>
+                        {" "}— delivered end of month 6, at no extra charge
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -231,231 +227,6 @@ export function LetsGoPage() {
         <p className="text-sm text-cream-300">{config.agency.name}</p>
       </motion.div>
     </div>
-  );
-}
-
-/**
- * Savings callout — first thing in the bundle section. À la carte vs bundle
- * with the savings line in gold, larger than the others.
- */
-function SavingsCallout() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6 }}
-      className="mt-12 md:mt-16"
-    >
-      <div className="relative overflow-hidden rounded-2xl border border-gold-500/30 bg-gradient-to-br from-bg-2 via-bg-1 to-bg-2 p-6 md:p-10">
-        <div className="pointer-events-none absolute -top-20 -right-20 size-[400px] rounded-full bg-gold-500/8 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-20 size-[400px] rounded-full bg-coral/6 blur-3xl" />
-
-        <div className="relative">
-          <div className="eyebrow text-gold-400">The math</div>
-
-          <div className="mt-5 space-y-3 md:space-y-4">
-            <SavingsRow
-              label="À la carte value over 6 months"
-              value="$23,000"
-              muted
-            />
-            <SavingsRow label="Your 6-month bundle" value="$19,200" />
-            <HrSoft className="my-2" />
-            <div className="flex items-baseline justify-between gap-4">
-              <div className="flex flex-col">
-                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-400">
-                  Total savings
-                </span>
-                <span className="text-sm text-cream-300">You save</span>
-              </div>
-              <span className="stat-num text-4xl text-gold-400 md:text-5xl">
-                $3,800
-              </span>
-            </div>
-          </div>
-
-          <p className="mt-6 text-[12px] text-cream-300/70">
-            Web management ($200/mo value) and Correlation Analysis included
-            free during your term.
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function SavingsRow({
-  label,
-  value,
-  muted = false,
-}: {
-  label: string;
-  value: string;
-  muted?: boolean;
-}) {
-  return (
-    <div className="flex items-baseline justify-between gap-4">
-      <span className={`text-sm ${muted ? "text-cream-300/70" : "text-cream-200"}`}>
-        {label}
-      </span>
-      <span
-        className={`font-display text-xl font-bold md:text-2xl ${
-          muted ? "text-cream-300/70" : "text-cream-50"
-        }`}
-      >
-        {value}
-      </span>
-    </div>
-  );
-}
-
-/** Two-phase timeline: Month 1 foundation, Months 2–6 full system running. */
-function BundleTimeline() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6 }}
-      className="mt-10 md:mt-12"
-    >
-      <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-        <TimelinePhase
-          eyebrow="Month 1"
-          title="Foundation"
-          summary="Full Organic Social service launches immediately. Website build begins and is delivered by end of month 1. Google Ads on hold until website is ready to convert visitors."
-          active={["Organic Social", "Website Build"]}
-          investment="$3,200"
-          note="Website builds this month. Google Ads launch month 2 once your site is conversion-ready."
-        />
-        <TimelinePhase
-          eyebrow="Months 2–6"
-          title="Full System Running"
-          summary="All services running simultaneously. Organic Social continues. Google Ads campaigns live. Web Management active for landing pages and edits."
-          active={["Organic Social", "Google Ads", "Web Management"]}
-          investment="$3,200/mo"
-          note="$600/mo Google ad budget is part of this total — it goes directly to Google, not to us."
-        />
-      </div>
-    </motion.div>
-  );
-}
-
-function TimelinePhase({
-  eyebrow,
-  title,
-  summary,
-  active,
-  investment,
-  note,
-}: {
-  eyebrow: string;
-  title: string;
-  summary: string;
-  active: string[];
-  investment: string;
-  note: string;
-}) {
-  return (
-    <Panel motion={false}>
-      <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-400">
-        {eyebrow}
-      </div>
-      <h3 className="mt-2 font-display text-2xl font-bold tracking-[-0.02em] text-cream-50 md:text-3xl">
-        {title}
-      </h3>
-      <p className="mt-3 text-[14px] leading-relaxed text-cream-200">{summary}</p>
-
-      <HrSoft className="my-5" />
-
-      <div className="eyebrow mb-2">Services active</div>
-      <div className="flex flex-wrap gap-2">
-        {active.map((a) => (
-          <span
-            key={a}
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-[12px] font-medium text-cream-100"
-          >
-            <Check className="size-3 text-gold-400" strokeWidth={3} />
-            {a}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-5 flex items-baseline justify-between border-t border-line-soft pt-4">
-        <span className="text-sm text-cream-300">Monthly investment</span>
-        <span className="font-display text-2xl font-bold text-cream-50 md:text-3xl">
-          {investment}
-        </span>
-      </div>
-
-      <p className="mt-3 text-[12px] leading-relaxed text-cream-300/80">
-        {note}
-      </p>
-    </Panel>
-  );
-}
-
-/** Slim callout bar listing what's included free in the bundle. */
-function IncludedFreeBar() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="mt-8"
-    >
-      <div className="rounded-2xl border border-gold-500/30 bg-gold-soft/50 px-5 py-4 md:px-6">
-        <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-400">
-          Included free in your bundle
-        </div>
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-          <li className="flex items-start gap-2 text-sm text-cream-300">
-            <Check
-              className="mt-0.5 size-4 flex-shrink-0 text-gold-400"
-              strokeWidth={3}
-            />
-            <span>
-              <span className="font-medium text-cream-100">Web Management</span>{" "}
-              — $200/mo value — active months 2–6
-            </span>
-          </li>
-          <li className="flex items-start gap-2 text-sm text-cream-300">
-            <Check
-              className="mt-0.5 size-4 flex-shrink-0 text-gold-400"
-              strokeWidth={3}
-            />
-            <span>
-              <span className="font-medium text-cream-100">
-                Correlation Analysis
-              </span>{" "}
-              — delivered end of month 6
-            </span>
-          </li>
-        </ul>
-      </div>
-    </motion.div>
-  );
-}
-
-/** Total investment summary line at the bottom of the bundle section. */
-function TotalInvestmentSummary() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="mt-10 text-center md:mt-12"
-    >
-      <p className="font-display text-base font-bold text-cream-50">
-        6 months. Everything included. $3,200/mo.
-      </p>
-      <p className="mt-1 text-sm text-cream-400">
-        Total investment: $19,200 — vs $23,000 à la carte.
-      </p>
-    </motion.div>
   );
 }
 
