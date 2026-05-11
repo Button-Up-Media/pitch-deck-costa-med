@@ -71,7 +71,7 @@ export const SERVICES: Record<ServiceKey, ServiceMeta> = {
       },
     ],
     deliverables: [
-      "6 videos per month",
+      "6 videos per month across Instagram, TikTok, and Facebook",
       "Posting schedule: 1 post week one, 2 posts weeks two and three, alternating each month",
       "Content shoot: once every 2 months on location",
       "6-month contract",
