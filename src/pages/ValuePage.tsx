@@ -158,23 +158,6 @@ export function ValuePage() {
         })}
       </div>
 
-      {/* template legend */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mt-8"
-      >
-        <div className="flex items-center gap-3 rounded-xl border border-dashed border-gold-400/30 bg-gold-500/5 px-4 py-3">
-          <span className="inline-block rounded border border-dashed border-gold-400/60 bg-gold-500/10 px-1.5 font-mono text-[10px] font-bold text-gold-300">
-            ___
-          </span>
-          <p className="text-[12px] text-cream-300">
-            Highlighted blanks are template fields — fill these in before presenting to a client.
-          </p>
-        </div>
-      </motion.div>
     </div>
   );
 }
