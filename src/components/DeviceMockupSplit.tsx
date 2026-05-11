@@ -28,13 +28,13 @@ export function DeviceMockupSplit({ mobileCrop = "top" }: { mobileCrop?: string 
                 <div className="size-2.5 rounded-full bg-green-500/60" />
                 <div className="mx-2 flex h-4 flex-1 items-center rounded bg-[#111] px-2">
                   <span className="truncate font-mono text-[8px] text-cream-300/40">
-                    costamedrestaurant.com
+                    rustypelican.com
                   </span>
                 </div>
               </div>
               <img
-                src="/images/costa-med/indoors.jpg"
-                alt="Costa Med interior"
+                src="/images/rp-menu-computer.jpg"
+                alt="Restaurant website"
                 className="h-[240px] w-full object-cover object-top lg:h-[310px] xl:h-[360px]"
               />
             </div>
@@ -49,8 +49,8 @@ export function DeviceMockupSplit({ mobileCrop = "top" }: { mobileCrop?: string 
                 <div className="h-2 w-14 rounded-full bg-[#1a1a1a]" />
               </div>
               <img
-                src="/images/costa-med/food.jpg"
-                alt="Costa Med food"
+                src="/images/rp-menu-mobile.jpg"
+                alt="Restaurant website mobile"
                 className="h-[290px] w-full object-cover lg:h-[350px] xl:h-[400px]"
                 style={{ objectPosition: mobileCrop }}
               />

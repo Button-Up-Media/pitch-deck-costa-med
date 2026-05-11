@@ -107,7 +107,7 @@ export const config: Config = {
       name: "Costa Med",
       city: "Key Biscayne, FL",
       cuisine: "Bistro & Wine",
-      imageUrl: "/images/costa-med/outside.jpg",
+      imageUrl: "/images/costa-med/indoors.jpg",
     },
   ],
 
