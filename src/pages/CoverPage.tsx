@@ -47,6 +47,29 @@ export function CoverPage() {
           {config.client.name}
         </motion.h1>
 
+        {(config.client.tagline || config.client.location) && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.18 }}
+            className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-cream-200 md:text-base"
+          >
+            {config.client.tagline && (
+              <span className="font-accent italic text-cream-100">
+                {config.client.tagline}
+              </span>
+            )}
+            {config.client.tagline && config.client.location && (
+              <span className="text-cream-300/60">·</span>
+            )}
+            {config.client.location && (
+              <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-gold-400 md:text-[13px]">
+                {config.client.location}
+              </span>
+            )}
+          </motion.div>
+        )}
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

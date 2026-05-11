@@ -52,6 +52,10 @@ export type Config = {
     decisionDate: string;
     path: ClientPath;
     primaryGoal: GrowthGoal;
+    /** Short location string shown on the cover (e.g. "Key Biscayne, FL") */
+    location?: string;
+    /** Short tagline shown on the cover under the client name (e.g. "Bistro & Wine") */
+    tagline?: string;
   };
   agency: {
     name: string;
@@ -74,13 +78,15 @@ export type Config = {
 
 export const config: Config = {
   client: {
-    name: "Client Restaurant Group",
-    shortName: "Client",
+    name: "Costa Med",
+    shortName: "Costa Med",
     industry: "Hospitality",
-    preparedFor: "Client Leadership Team",
-    decisionDate: "Q3 2026",
+    preparedFor: "Costa Med Leadership Team",
+    decisionDate: "Q2 2026",
     path: "wordOfMouth",
     primaryGoal: "acquisition",
+    location: "Key Biscayne, FL",
+    tagline: "Bistro & Wine",
   },
 
   agency: {
@@ -98,25 +104,18 @@ export const config: Config = {
 
   brands: [
     {
-      name: "Brand One",
-      city: "Primary Market",
-      cuisine: "Modern American",
+      name: "Costa Med",
+      city: "Key Biscayne, FL",
+      cuisine: "Bistro & Wine",
       imageUrl:
         "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      name: "Brand Two",
-      city: "Secondary Market",
-      cuisine: "Coastal Kitchen",
-      imageUrl:
-        "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80",
     },
   ],
 
   services: {
     organicSocial: {
       enabled: true,
-      monthlyPrice: null,
+      monthlyPrice: 2500,
       hoursPerMonth: null,
       recommended: true,
     },
@@ -124,17 +123,27 @@ export const config: Config = {
       enabled: true,
       monthlyPrice: 500,
       hoursPerMonth: null,
-      priceNote: "management fee · budget billed separately",
+      priceNote: "$500 mgmt + $600 ad spend = $1,100/mo recommended",
     },
-    paidSocial: { enabled: true, monthlyPrice: null, hoursPerMonth: null },
-    websiteCreation: { enabled: true, monthlyPrice: null, hoursPerMonth: null },
-    websiteManagement: { enabled: true, monthlyPrice: null, hoursPerMonth: null },
+    paidSocial: { enabled: false, monthlyPrice: null, hoursPerMonth: null },
+    websiteCreation: {
+      enabled: true,
+      monthlyPrice: 1500,
+      hoursPerMonth: null,
+      priceNote: "one-time build",
+    },
+    websiteManagement: {
+      enabled: true,
+      monthlyPrice: 200,
+      hoursPerMonth: null,
+      priceNote: "per month after website is complete",
+    },
     seo: { enabled: false, monthlyPrice: null, hoursPerMonth: null },
   },
 
   bundle: {
     enabled: true,
-    monthlyPrice: null,
+    monthlyPrice: 3200,
     setupFee: null,
     contractMonths: 6,
   },
