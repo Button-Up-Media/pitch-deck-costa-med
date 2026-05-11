@@ -120,7 +120,7 @@ export function OpportunitiesPage() {
       <div className="mt-14">
         <div className="eyebrow mb-5">Where you're starting from</div>
         {(() => {
-          const info = PATHS[path];
+          const info = PATHS[path as "wordOfMouth" | "burnedByPriorAgency"];
           return (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
