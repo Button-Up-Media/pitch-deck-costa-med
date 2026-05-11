@@ -119,8 +119,12 @@ export function ValuePage() {
                         <span className="stat-num text-3xl md:text-4xl">
                           ${price.toLocaleString()}
                         </span>
-                        <span className="text-xs text-cream-300">per month</span>
-                        {cfg.priceNote && (
+                        <span className="text-xs text-cream-300">
+                          {cfg.priceNote?.startsWith("one-time")
+                            ? cfg.priceNote
+                            : "per month"}
+                        </span>
+                        {cfg.priceNote && !cfg.priceNote.startsWith("one-time") && (
                           <span className="mt-0.5 text-[11px] leading-tight text-cream-300/70">
                             {cfg.priceNote}
                           </span>
